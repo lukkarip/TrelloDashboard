@@ -1,0 +1,41 @@
+﻿<style>
+
+</style>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="https://trello.com/1/client.js?key=f96973f20aaf1042e34fde11aeab03d7"></script>
+<script src="~/Scripts/trello.js"></script>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Trello Dashboard</h1>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div id="loggedout">
+            <a id="connectLink" href="#">Connect To Trello</a>
+        </div>
+        <div id="loggedin">
+            <div id="header">
+                Logged in to as <span id="fullName"></span>
+                <a id="disconnect" href="#">Log Out</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-5">
+        <div id="output_boards"></div>
+    </div>
+    <div class="col-lg-5">
+        <div id="output_taskit"></div>
+    </div>
+    <div class="col-lg-2">
+        <div id="output_tunnit">
+        </div>
+    </div>
+</div>
