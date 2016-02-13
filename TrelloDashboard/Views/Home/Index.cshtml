@@ -1,8 +1,5 @@
-﻿<script src="https://trello.com/1/client.js?key=f96973f20aaf1042e34fde11aeab03d7"></script>
-<script src="~/Scripts/trello.js"></script>
-
-@{
-    ViewBag.Title = "Home Page";
+﻿@{
+    ViewBag.Title = "Home";
 }
 
 <div class="jumbotron">
@@ -34,3 +31,8 @@
         </div>
     </div>
 </div>
+
+@section scripts {
+    <script src="https://trello.com/1/client.js?key=f96973f20aaf1042e34fde11aeab03d7"></script>
+    <script src="~/Scripts/trello-home.js"></script>
+}

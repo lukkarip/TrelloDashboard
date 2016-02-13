@@ -1,7 +1,35 @@
 ﻿@{
-    ViewBag.Title = "About";
+    ViewBag.Title = "Home";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<div class="jumbotron">
+    <h1>Trello Dashboard</h1>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div id="loggedout">
+            <a id="connectLink" href="#">Connect To Trello</a>
+        </div>
+        <div id="loggedin">
+            <div id="header">
+                Logged in to as <span id="fullName"></span>
+                <a id="disconnect" href="#">Log Out</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <div id="output_boards"></div>
+    </div>
+    <div class="col-lg-2">
+        <div id="output_tunnit">
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="https://trello.com/1/client.js?key=f96973f20aaf1042e34fde11aeab03d7"></script>
+    <script src="~/Scripts/trello-all-projects.js"></script>
+}

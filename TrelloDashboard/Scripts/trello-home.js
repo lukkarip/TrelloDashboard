@@ -12,12 +12,12 @@ $(document).ready(function () {
         Trello.members.get("me", function (member) {
             $("#fullName").text(member.fullName);
 
-            var $cards = $("<div>")
+            var $boards = $("<div>")
                 .text("Loading Boards...")
                 .appendTo("#output_boards");
-            
+
             Trello.get("/organizations/medbitteamtesla1/boards", function (boards) {
-                $cards.empty();
+                $boards.empty();
                 $.each(boards, function (ix, board) {
                     var div_board = $("<div>");
                     $("<a>")
@@ -26,7 +26,7 @@ $(document).ready(function () {
                     .addClass("card")
                     .text(board.name)
                     .appendTo(div_board);
-                    
+
                     $("<a>")
                     .addClass("btn btn-default")
                     .text("-->")
@@ -36,7 +36,7 @@ $(document).ready(function () {
                         var regExp = /\(([^)]+)\)/;
 
                         var board_id = $(this).prev().data("id");
-                        var call = "/boards/" + board_id + "/cards" 
+                        var call = "/boards/" + board_id + "/cards"
                         Trello.get(call, function (cards) {
                             $('#output_taskit').empty();
                             $("#output_tunnit").empty();
@@ -62,11 +62,11 @@ $(document).ready(function () {
                             $('<label>').text("Tunnit yhteensä: ").appendTo($("#output_tunnit"));
                             $('<label>').text(tunnit).appendTo($("#output_tunnit"));
                         });
-                        
+
                     })
                     .appendTo(div_board)
 
-                    div_board.appendTo($cards);
+                    div_board.appendTo($boards);
                 });
             });
         });
@@ -105,4 +105,3 @@ $(document).ready(function () {
     $("#disconnect").click(logout);
 
 });
-
