@@ -26,15 +26,12 @@ $(document).ready(function () {
                     .addClass("card")
                     .text(board.name)
                     .appendTo(div_board);
-
                     $("<a>")
                     .addClass("btn btn-default")
                     .text("-->")
                     .on("click", function () {
-
                         var tunnit = 0;
                         var regExp = /\(([^)]+)\)/;
-
                         var board_id = $(this).prev().data("id");
                         var call = "/boards/" + board_id + "/cards"
                         Trello.get(call, function (cards) {
@@ -48,9 +45,7 @@ $(document).ready(function () {
                                 .addClass("card")
                                 .text(card.name)
                                 .appendTo(div_board);
-
                                 div_board.appendTo($("#output_taskit"));
-
                                 var tuntimaara = regExp.exec(card.name);
                                 if (tuntimaara) {
                                     if (!isNaN(tuntimaara[1])) {

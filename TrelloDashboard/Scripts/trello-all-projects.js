@@ -29,7 +29,6 @@ $(document).ready(function () {
                     .appendTo(div_board);
                     div_board.appendTo(div_board_container);
                     div_board_container.appendTo($boards);
-
                     var tunnit = 0;
                     var regExp = /\(([^)]+)\)/;
                     var call = "/boards/" + board.id + "/cards" 
